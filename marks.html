@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Marks</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="attendance.html">Attendance</a>
+<a href="marks.html">Marks</a>
+<a href="reports.html">Reports</a>
+<a href="index.html">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>Marks Management</h1>
+
+<input type="text" id="marksName" placeholder="Student Name">
+<input type="text" id="marksSubject" placeholder="Subject">
+<input type="number" id="marksValue" placeholder="Marks">
+<input type="date" id="marksDate">
+
+<button onclick="addMarks()">Add Marks</button>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Student Name</th>
+<th>Subject</th>
+<th>Marks</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody id="marksTable">
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

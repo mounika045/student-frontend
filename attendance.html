@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="attendance.html">Attendance</a>
+<a href="marks.html">Marks</a>
+<a href="reports.html">Reports</a>
+<a href="index.html">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>Attendance Management</h1>
+
+<input type="text" id="attendanceName" placeholder="Student Name">
+
+<!-- NEW DATE INPUT -->
+<input type="date" id="attendanceDate">
+
+<select id="attendanceStatus">
+<option value="Present">Present</option>
+<option value="Absent">Absent</option>
+</select>
+
+<button onclick="markAttendance()">Mark Attendance</button>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Student Name</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="attendanceTable">
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

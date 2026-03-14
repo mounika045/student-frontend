@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Reports</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<button onclick="downloadReport()">Download Report</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="attendance.html">Attendance</a>
+<a href="marks.html">Marks</a>
+<a href="reports.html">Reports</a>
+<a href="index.html">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>Reports & Search</h1>
+
+<input type="text" id="searchStudent" placeholder="Search Student">
+<button onclick="searchStudent()">Search</button>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Subject</th>
+<th>Marks</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody id="reportTable">
+</tbody>
+<button onclick="downloadReport()">Download Report</button>
+</table>
+
+<h3 id="averageMarks"></h3>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

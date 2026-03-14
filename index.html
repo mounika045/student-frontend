@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+<h1>Student Management System</h1>
+
+<div class="login-box">
+
+<div class="tabs">
+<button onclick="showLogin()" id="loginTab">Login</button>
+<button onclick="showRegister()" id="registerTab">Register</button>
+</div>
+
+<!-- LOGIN -->
+
+<div id="loginForm">
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+
+<!-- REGISTER -->
+
+<div id="registerForm" style="display:none;">
+
+<input type="text" id="regUsername" placeholder="Create Username">
+
+<input type="password" id="regPassword" placeholder="Create Password">
+
+<button onclick="register()">Register</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

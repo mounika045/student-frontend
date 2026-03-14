@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="attendance.html">Attendance</a>
+<a href="marks.html">Marks</a>
+<a href="reports.html">Reports</a>
+<a href="index.html">Logout</a>
+
+</div>
+<div class="main">
+
+<h1>Dashboard</h1>
+
+<div class="dashboard-cards">
+<div class="ai-card">
+<div class="dashboard-cards">
+
+<div class="card">
+<h3>Top Performer 🏆</h3>
+<p id="topStudent">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Needs Attention ⚠</h3>
+<p id="weakStudent">Loading...</p>
+</div>
+
+</div>
+
+<h2 style="margin-top:40px;">Student Rank List</h2>
+
+<table class="rank-table">
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Average Marks</th>
+</tr>
+</thead>
+
+<tbody id="rankTable">
+</tbody>
+
+</table>
+<h2>AI Student Performance Predictor</h2>
+
+<div class="ai-inputs">
+
+<input type="text" id="aiName" placeholder="Student Name">
+
+<input type="number" id="aiMarks" placeholder="Marks">
+
+<input type="number" id="aiAttendance" placeholder="Attendance %">
+
+<button onclick="predictPerformance()">Predict</button>
+
+</div>
+
+<div class="ai-result">
+<p id="aiResult"></p>
+</div>
+
+</div>
+<div class="card">
+<h3>Total Students</h3>
+<p id="totalStudents">0</p>
+</div>
+
+<div class="card">
+<h3>Total Attendance</h3>
+<p id="totalAttendance">0</p>
+</div>
+
+<div class="card">
+<h3>Average Marks</h3>
+<p id="averageMarks">0</p>
+</div>
+
+</div>
+
+<canvas id="marksChart" width="400" height="150"></canvas>
+
+</div>
+<div class="ai-box">
+</div>
+<p id="topStudent">Loading...</p>
+<p id="weakStudent">Loading...</p>
+<tbody id="rankTable"></tbody>
+</body>
+
+</html>

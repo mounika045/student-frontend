@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Students</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="attendance.html">Attendance</a>
+<a href="marks.html">Marks</a>
+<a href="reports.html">Reports</a>
+<a href="index.html">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>Students</h1>
+
+<input type="text" id="name" placeholder="Student Name">
+<input type="text" id="email" placeholder="Email">
+<input type="text" id="course" placeholder="Course">
+
+<button onclick="addStudent()">Add Student</button>
+
+<br><br>
+
+<table border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Course</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="studentTable">
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
