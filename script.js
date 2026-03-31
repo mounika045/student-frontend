@@ -1,3 +1,7 @@
+/* ================= CONFIG ================= */
+
+const API_URL = "https://student-backend-w3e9.onrender.com";
+
 /* ================= LOGIN / REGISTER ================= */
 
 function showLogin(){
@@ -59,7 +63,7 @@ alert("Please fill all fields");
 return;
 }
 
-let response = await fetch("http://localhost:8080/students",{
+let response = await fetch(`${API_URL}/students`,{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -88,7 +92,7 @@ async function loadStudents(){
 let table = document.getElementById("studentTable");
 if(!table) return;
 
-let response = await fetch("http://localhost:8080/students");
+let response = await fetch(`${API_URL}/students`);
 
 let students = await response.json();
 
@@ -118,7 +122,7 @@ async function deleteStudent(id){
 
 if(!confirm("Are you sure you want to delete this student?")) return;
 
-let response = await fetch(`http://localhost:8080/students/${id}`,{
+let response = await fetch(`${API_URL}/students/${id}`,{
 method:"DELETE"
 });
 
@@ -304,20 +308,29 @@ let totalStudents=document.getElementById("totalStudents");
 let totalAttendance=document.getElementById("totalAttendance");
 let averageMarks=document.getElementById("averageMarks");
 
-/* fetch students from backend */
+try {
 
-let response = await fetch("http://localhost:8080/students");
+/* fetch students from backend */
+let response = await fetch(`${API_URL}/students`);
 let students = await response.json();
 
-/* attendance */
+if(totalStudents) totalStudents.innerText = students.length;
 
+} catch(e) {
+
+/* Render free tier may be sleeping - show loading and retry */
+console.warn("Backend may be waking up, retrying in 5s...");
+if(totalStudents) totalStudents.innerText = "...";
+setTimeout(loadDashboard, 5000);
+return;
+
+}
+
+/* attendance */
 let attendance = JSON.parse(localStorage.getItem("attendance")) || [];
 
 /* marks */
-
 let marks = JSON.parse(localStorage.getItem("marks")) || [];
-
-if(totalStudents) totalStudents.innerText = students.length;
 
 if(totalAttendance) totalAttendance.innerText = attendance.length;
 
@@ -366,7 +379,7 @@ document.getElementById("aiResult").innerText =
 
 window.onload=function(){
 
-displayStudents();
+loadStudents();        // ✅ Fixed: was wrongly called displayStudents()
 displayAttendance();
 displayMarks();
 loadDashboard();
@@ -407,6 +420,8 @@ link.download = "student_report.csv";
 link.click();
 
 }
+
+
 function loadStudentAnalytics(){
 
 let marksList = JSON.parse(localStorage.getItem("marks")) || [];
